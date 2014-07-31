@@ -551,6 +551,9 @@ describe BinData::Record, "with :onlyif" do
     obj.a?.must_equal true
     obj.b?.must_equal true
     obj.c?.must_equal false
+    assert_raises NoMethodError do
+      obj.c
+    end
   end
 
   it "reads as lambdaed" do
